@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@layer base {
+  :root {
+    --color-primary: 139 0 18; /* NDC Red */
+    --color-primary-dark: 107 0 14;
+    --color-secondary: 0 55 45; /* Dark Green */
+    --color-accent: 206 17 38; /* Bright Red */
+    --color-gray-light: 249 250 251;
+    --color-gray: 107 114 128;
+  }
+
+  * {
+    font-family: var(--font-josefin), sans-serif;
+  }
+
+  html {
+    font-family: var(--font-josefin), sans-serif;
+  }
+
+  body {
+    @apply antialiased text-gray-800 bg-white;
+    font-family: var(--font-josefin), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-josefin), sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
