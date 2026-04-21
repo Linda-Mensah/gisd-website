@@ -42,7 +42,7 @@ export const CTASection = () => {
               href="/contact"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white/10"
+              className="bg-white/10  text-white backdrop-blur-sm border-white/10 hover:bg-white/20"
             >
               Contact Us
             </Button>

@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     // Send notification email to admin
     const adminEmailResult = await sendEmail({
-      to: process.env.ADMIN_EMAIL || "admin@gisd.edu.gh",
+      to: process.env.ADMIN_EMAIL || "info@gisd.edu.gh",
       subject: "New GISD Application Submitted",
       html: getAdminEmailTemplate(data),
     });
