@@ -2,51 +2,57 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Heading, SectionWrapper, Card } from "@/components/ui";
-import { Img1, Img2 } from "@/assets/images";
-import { Users, BookOpen, Briefcase } from "lucide-react";
+import { Heading, SectionWrapper } from "@/components/ui";
+import { Img1, Img2, Img3 } from "@/assets/images";
+import {
+  Building2,
+  UsersRound,
+  Award,
+  BookOpen,
+  GraduationCap,
+  Globe,
+} from "lucide-react";
 
 export default function AboutPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO STORY (less structured, more narrative) */}
       <SectionWrapper background="white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* TEXT */}
+        <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-10 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className="md:col-span-7"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <Heading level={1} className="mb-6">
               About GISD
             </Heading>
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              GISD is where political ideas meet practical leadership.
+
+            <p className="text-lg text-gray-700 leading-relaxed mb-5">
+              The Ghana Institute of Social Democracy exists to shape political
+              thinking through structured education rooted in social democracy.
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              Since 2017, we’ve focused on building people—not just programmes—
-              equipping leaders with the mindset and skills to navigate
-              governance and public service.
+
+            <p className="text-gray-600 leading-relaxed border-l-2 border-red-700 pl-4">
+              Formally launched in 2017 at the NDC Headquarters in Accra, GISD
+              builds on the party’s ideological commitment to equity,
+              solidarity, and social justice.
             </p>
           </motion.div>
 
-          {/* IMAGE STACK (more dynamic) */}
+          {/* Asymmetrical image stack (less “grid UI”) */}
           <motion.div
-            className="relative h-[400px]"
-            initial={{ opacity: 0, scale: 0.95 }}
+            className="md:col-span-5 relative h-[420px]"
+            initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <div className="absolute top-0 left-0 w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src={Img1}
-                alt="GISD training"
-                fill
-                className="object-cover"
-              />
+            <div className="absolute top-0 left-0 w-[75%] h-[75%] rounded-2xl overflow-hidden shadow-lg">
+              <Image src={Img1} alt="GISD" fill className="object-cover" />
             </div>
-            <div className="absolute bottom-0 right-0 w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+
+            <div className="absolute bottom-0 right-0 w-[75%] h-[75%] rounded-2xl overflow-hidden shadow-xl border-4 border-white">
               <Image
                 src={Img2}
                 alt="GISD session"
@@ -58,120 +64,132 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* STORY SECTION (IMAGE LEFT) */}
+      {/* GOVERNANCE (split narrative instead of equal cards) */}
       <SectionWrapper background="gray">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* IMAGE */}
+        <div className="max-w-6xl mx-auto space-y-16">
           <motion.div
-            className="relative h-[350px] rounded-2xl overflow-hidden"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src={Img1}
-              alt="GISD history"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-
-          {/* TEXT */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold mb-4">Our Story</h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              GISD started as a party school, but quickly evolved into something
-              more practical—focused on preparing people for real
-              responsibility.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Today, it bridges the gap between political theory and how
-              leadership actually works on the ground.
-            </p>
-          </motion.div>
-        </div>
-      </SectionWrapper>
-
-      {/* GOVERNANCE (LESS TEXT, MORE VISUAL CARDS) */}
-      <SectionWrapper background="white">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
             <Heading level={2} className="mb-3">
-              How It Works
+              Governance & Leadership
             </Heading>
-            <p className="text-gray-600">
-              A simple structure that keeps everything moving.
+            <p className="text-gray-600 max-w-2xl">
+              GISD operates under a structured leadership system that balances
+              academic independence with party oversight.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Direction",
-                desc: "Board of Directors",
-                icon: Users,
-              },
-              {
-                title: "Learning",
-                desc: "Academic Council",
-                icon: BookOpen,
-              },
-              {
-                title: "Execution",
-                desc: "Management Team",
-                icon: Briefcase,
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -8 }}
-              >
-                <Card className="p-6 text-center h-full hover:shadow-lg transition">
-                  <div className="w-14 h-14 mx-auto bg-red-50 rounded-full flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-red-700" />
-                  </div>
-                  <p className="text-lg font-semibold">{item.title}</p>
-                  <p className="text-sm text-gray-500">{item.desc}</p>
-                </Card>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* LEFT STORY BLOCK */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <Building2 className="w-6 h-6 text-red-700" />
+                <h3 className="text-xl font-semibold">Governing Council</h3>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Chaired by the General Secretary of the NDC, the Governing
+                Council provides strategic oversight for the institute.
+              </p>
+
+              <p className="text-gray-600 leading-relaxed">
+                Operational management is handled by the Rector, Registrar, and
+                academic committees responsible for delivery and administration.
+              </p>
+            </motion.div>
+
+            {/* RIGHT STORY BLOCK */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <UsersRound className="w-6 h-6 text-red-700" />
+                <h3 className="text-xl font-semibold">Staff & Fellows</h3>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GISD draws from academics, politicians, policy experts, and
+                international contributors.
+              </p>
+
+              <div className="text-sm text-gray-600 space-y-2">
+                <p>• Academics & researchers</p>
+                <p>• Former ministers & MPs</p>
+                <p>• Policy & governance experts</p>
+                <p>• Communication specialists</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* FINAL IMAGE STRIP (VISUAL ENDING) */}
+      {/* ACCREDITATION (more minimal, less “card grid”) */}
+      <SectionWrapper background="white">
+        <div className="max-w-4xl mx-auto text-center">
+          <Award className="w-12 h-12 text-red-700 mx-auto mb-4" />
+
+          <Heading level={2} className="mb-4">
+            Standards & Training Quality
+          </Heading>
+
+          <p className="text-gray-600 text-lg leading-relaxed mb-10">
+            GISD programmes are built on structured modules combining theory,
+            practice, and leadership development.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+            <span className="flex items-center gap-2">
+              <GraduationCap className="w-4 h-4 text-red-700" />
+              Approved Modules
+            </span>
+
+            <span className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-red-700" />
+              Practical Learning
+            </span>
+
+            <span className="flex items-center gap-2">
+              <Globe className="w-4 h-4 text-red-700" />
+              Leadership Focus
+            </span>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* FINAL SECTION (more editorial, less layout-heavy) */}
       <SectionWrapper background="gray">
         <motion.div
-          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6"
+          className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <div className="relative h-[250px] rounded-2xl overflow-hidden">
+          <div className="relative h-[320px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src={Img2}
+              src={Img3}
               alt="GISD training"
               fill
               className="object-cover"
             />
           </div>
-          <div className="flex items-center">
-            <p className="text-gray-700 text-lg leading-relaxed">
-              At its core, GISD is about preparing people to lead with clarity,
-              responsibility, and purpose.
+
+          <div>
+            <h3 className="text-3xl font-semibold mb-4">
+              Building Political Leadership
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed">
+              GISD focuses on preparing individuals to lead with clarity,
+              discipline, and civic responsibility through structured political
+              education.
             </p>
           </div>
         </motion.div>

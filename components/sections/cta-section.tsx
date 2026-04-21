@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export const CTASection = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-red-900 text-white">
+    <section className="relative py-16 overflow-hidden bg-gradient-to-br from-red-700 via-red-800 to-red-900 text-white">
       {/* Glow */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
 
@@ -19,12 +19,12 @@ export const CTASection = () => {
           viewport={{ once: true }}
         >
           <Heading level={2} className="text-white mb-4">
-            Ready to take the next step?
+            Take the next step in your political journey.
           </Heading>
 
           <p className="text-white/80 mb-8 text-lg">
-            Join GISD and start building the skills needed for effective
-            leadership.
+            Build your knowledge. Strengthen your leadership. Serve with
+            purpose.
           </p>
 
           <div className="flex flex-wrap gap-4">

@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { Heading } from "../ui/heading";
 import { Users } from "lucide-react";
 import Image from "next/image";
-import { Img3 } from "@/assets/images";
+import { Img5 } from "@/assets/images";
 
 export const Welcome = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
         {/* TEXT */}
         <motion.div
@@ -55,7 +55,7 @@ export const Welcome = () => {
         >
           <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src={Img3}
+              src={Img5}
               alt="GISD training"
               fill
               className="object-cover"

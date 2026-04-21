@@ -225,6 +225,7 @@ export const ApplyForm = () => {
           size="lg"
           fullWidth
           disabled={isSubmitting}
+          className="cursor-pointer"
         >
           {isSubmitting ? "Submitting..." : "Submit Application"}
         </Button>

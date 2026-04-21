@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Facebook, Twitter, Linkedin } from "@/components/icons";
+import Image from "next/image";
+import { GisdLogo } from "@/assets/images";
 
 export const Footer = () => {
   return (
@@ -8,10 +10,18 @@ export const Footer = () => {
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">GISD</h3>
+            <Link href="/" className="flex items-center gap-3 mb-3">
+              <Image
+                src={GisdLogo}
+                alt="GISD Logo"
+                width={40}
+                height={40}
+                className="rounded-sm"
+                priority
+              />
+            </Link>
             <p className="text-gray-400 text-sm">
-              Training and research institute of the National Democratic
-              Congress (NDC)
+              Ghana Institute of Democracy
             </p>
           </div>
 

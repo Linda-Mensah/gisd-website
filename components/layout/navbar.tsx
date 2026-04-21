@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -19,12 +19,27 @@ const navItems = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/40 backdrop-blur-xl border-b border-white/20 shadow-sm"
+          : "bg-white border-b border-gray-200"
+      }`}
+    >
       <div className="container-custom">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -40,7 +55,7 @@ export const Navbar = () => {
 
             <div className="hidden sm:flex flex-col leading-tight">
               <span className="font-semibold text-gray-900">GISD</span>
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-gray-600">
                 Ghana Institute of Social Democracy
               </span>
             </div>
@@ -55,17 +70,16 @@ export const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative text-sm transition-colors ${
+                  className={`relative text-sm transition-all duration-300 ${
                     active
-                      ? "text-red-700 font-medium"
-                      : "text-gray-600 hover:text-red-700"
+                      ? "text-red-700 font-bold"
+                      : "text-gray-700 hover:text-red-700"
                   }`}
                 >
                   {item.label}
 
-                  {/* active indicator */}
                   <span
-                    className={`absolute left-0 -bottom-1 h-[2px] transition-all ${
+                    className={`absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${
                       active
                         ? "w-full bg-red-700"
                         : "w-0 bg-red-700 group-hover:w-full"
@@ -78,9 +92,19 @@ export const Navbar = () => {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Button href="/apply" variant="primary" size="sm">
-              Apply Now
-            </Button>
+            <a
+              href="https://elearning.gisd.edu.gh/"
+              target="_blank"
+              className="cursor-pointer"
+            >
+              <Button
+                variant="primary"
+                size="sm"
+                className="bg-red-700 text-white cursor-pointer hover:bg-red-800"
+              >
+                E-Learning
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -104,7 +128,7 @@ export const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-2 py-2 rounded-md text-sm ${
+                  className={`block px-2 py-2 rounded-md text-sm transition-all duration-300 ${
                     active
                       ? "text-red-700 bg-red-50 font-medium"
                       : "text-gray-700 hover:text-red-700 hover:bg-gray-50"
@@ -116,9 +140,19 @@ export const Navbar = () => {
             })}
 
             <div className="pt-3">
-              <Button href="/apply" variant="primary" fullWidth>
-                Apply Now
-              </Button>
+              <a
+                href="https://elearning.gisd.edu.gh/"
+                target="_blank"
+                className="cursor-pointer"
+              >
+                <Button
+                  variant="primary"
+                  fullWidth
+                  className="bg-red-700 cursor-pointer text-white hover:bg-red-800"
+                >
+                  E-Learning
+                </Button>
+              </a>
             </div>
           </div>
         )}

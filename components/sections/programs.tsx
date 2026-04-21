@@ -15,24 +15,24 @@ const programmes = [
   },
   {
     icon: Users,
-    title: "Workshops",
+    title: "Workshops & Seminars",
     description: "Interactive sessions with experts",
   },
   {
     icon: Mic,
-    title: "Conferences",
+    title: "Conferences & Lectures",
     description: "High-level political discussions",
   },
   {
     icon: MapPin,
-    title: "Town Halls",
+    title: "Town Hall Engagements",
     description: "Grassroots engagement forums",
   },
 ];
 
 export const Programmes = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="container-custom">
         {/* Header */}
         <motion.div

@@ -61,7 +61,7 @@ export const FormMultiSelect = ({
       <div className="relative">
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 cursor-pointer min-h-[42px] flex items-center justify-between"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 cursor-pointer min-h-[42px] flex items-center justify-between"
         >
           <div className="flex flex-wrap gap-1">
             {selectedLabels.length > 0 ? (
@@ -107,7 +107,7 @@ export const FormMultiSelect = ({
                       type="checkbox"
                       checked={value.includes(option.value)}
                       onChange={() => toggleOption(option.value)}
-                      className="mr-2"
+                      className="mr-2 outline-0 focus:outline-0"
                     />
                     <span className="text-sm text-gray-700">
                       {option.label}

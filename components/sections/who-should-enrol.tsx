@@ -12,17 +12,17 @@ import {
 } from "lucide-react";
 
 const audiences = [
-  { title: "Party Executives", icon: Users },
-  { title: "Government Appointees", icon: Briefcase },
-  { title: "Parliamentarians", icon: Mic2 },
-  { title: "Youth Groups (TEIN)", icon: GraduationCap },
+  { title: "Party Executives & Officers", icon: Users },
+  { title: "Political Appointees", icon: Briefcase },
+  { title: "Parliamentarians & Aspirants", icon: Mic2 },
+  { title: "TEIN & Youth Groups", icon: GraduationCap },
   { title: "Communication Teams", icon: Mail },
   { title: "Political Activists", icon: Star },
 ];
 
 export const WhoShouldEnrol = () => {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="container-custom">
         <motion.div
           className="max-w-2xl mb-12"

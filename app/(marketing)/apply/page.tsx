@@ -27,7 +27,7 @@ export default function ApplyPage() {
         </motion.div>
       </SectionWrapper>
 
-      <SectionWrapper background="gray">
+      <SectionWrapper background="gray" className="-mt-20">
         <motion.div
           className="max-w-3xl mx-auto"
           initial={{ y: 30, opacity: 0 }}

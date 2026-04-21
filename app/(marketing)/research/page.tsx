@@ -15,31 +15,16 @@ const researchOutputs = [
     icon: BookOpen,
     title: "Discussion Papers",
     description: "In-depth analysis of social democratic principles",
-    items: [
-      "Social Justice in Ghana",
-      "Democratic Socialism",
-      "Welfare State Models",
-    ],
   },
   {
     icon: Newspaper,
     title: "Working Papers",
     description: "Ongoing research and preliminary findings",
-    items: [
-      "Youth Political Participation",
-      "Local Governance",
-      "Digital Democracy",
-    ],
   },
   {
     icon: BarChart,
     title: "Annual Reports",
     description: "Comprehensive yearly research summaries",
-    items: [
-      "2023 Research Report",
-      "2022 Impact Assessment",
-      "2021 Policy Review",
-    ],
   },
 ];
 
@@ -53,8 +38,9 @@ export default function ResearchPage() {
             Research & Advocacy
           </Heading>
           <p className="text-gray-600 leading-relaxed">
-            GISD conducts rigorous research to inform policy-making and advance
-            social democratic thinking across Ghana and Africa.
+            Research and advocacy are central to the work of GISD. The institute
+            generates knowledge that supports the NDC’s policy direction,
+            governance approach, and manifesto development.
           </p>
         </div>
       </SectionWrapper>
@@ -80,17 +66,6 @@ export default function ResearchPage() {
                     <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
 
                     <p className="text-gray-600 mb-3">{item.description}</p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {item.items.map((i, idx) => (
-                        <span
-                          key={idx}
-                          className="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-700"
-                        >
-                          {i}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </Card>

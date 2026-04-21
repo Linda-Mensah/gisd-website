@@ -4,6 +4,8 @@ interface ApplicantEmailParams {
   selectedCourses: string[];
 }
 
+const eLearning = "https://elearning.gisd.edu.gh/";
+
 export const getApplicantEmailTemplate = ({
   firstName,
   lastName,
@@ -37,7 +39,9 @@ export const getApplicantEmailTemplate = ({
               ${selectedCourses.map((course) => `<li>${course}</li>`).join("")}
             </ul>
           </div>
-          <p>Our admissions team will review your application and contact you within 5-7 business days with further instructions.</p>
+          <p>Our admissions team will review your application and contact you with further instructions.</p>
+          <p>You can also visit our visit <a href=${eLearning} target="_blank">e-learning platform</a> to explore some more programs.</p>
+          
           <p>If you have any questions, please don't hesitate to contact us at admissions@gisd.edu.gh</p>
           <br />
           <a href="https://gisd.edu.gh" class="button">Visit Our Website</a>

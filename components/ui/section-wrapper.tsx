@@ -18,7 +18,7 @@ export const SectionWrapper = ({
   };
 
   return (
-    <section className={`py-16 md:py-20 ${bgColors[background]} ${className}`}>
+    <section className={`pt-24 ${bgColors[background]} ${className}`}>
       <Container>{children}</Container>
     </section>
   );
