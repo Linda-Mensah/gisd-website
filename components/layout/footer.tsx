@@ -21,7 +21,7 @@ export const Footer = () => {
               />
             </Link>
             <p className="text-gray-400 text-sm">
-              Ghana Institute of Democracy
+              Ghana Institute of Social Democracy
             </p>
           </div>
 
