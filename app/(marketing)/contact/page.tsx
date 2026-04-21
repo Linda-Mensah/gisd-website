@@ -142,7 +142,7 @@ export default function ContactPage() {
                   whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <Button className="w-full bg-red-700 hover:bg-red-800 text-white font-medium py-2.5">
+                  <Button className="w-full bg-red-700 hover:bg-red-800 cursor-pointer text-white font-medium py-2.5">
                     Send Message
                   </Button>
                 </motion.div>
